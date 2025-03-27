@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор игры</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Это предотвращает появление прокрутки */
+            user-select: none; /* Запрет на выделение текста */
+            -webkit-user-select: none; /* Запрет на выделение текста в Safari */
+            -moz-user-select: none; /* Запрет на выделение текста в Firefox */
+            -ms-user-select: none; /* Запрет на выделение текста в Internet Explorer */
+        }
+
+       
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            width: 70%;
+            max-width: 900px;
+            padding: 50px 0 10px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .game-frame {
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-frame:hover {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.8);
+        }
+
+        .game-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .game-frame span {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(64, 64, 64, 0.7);
+            padding: 10px;
+            position: fixed;
+            color: #acacac;
+            bottom: 15px;
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .footer-item:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-item i {
+            font-size: 32px;
+        }
+
+        .footer-item span {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div class="game-frame" onclick="window.location.href = 'game.html'">
+            <img src="1111.jpg" alt="Игра 1">
+            <span>Игра 1</span>
+        </div>
+
+        <div class="game-frame" onclick="window.location.href = 'gam2.html'">
+            <img src="game2.jpg" alt="Игра 2">
+            <span>Игра 2</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-item" onclick="goToMenu()">
+            <i class="fa-solid fa-bars"></i>
+            <span>Menu</span>
+        </div>
+        <div class="footer-item" onclick="goToShop()">
+            <i class="fa-solid fa-store"></i>
+            <span>Shop</span>
+        </div>
+        <div class="footer-item" onclick="goToFriends()">
+            <i class="fa-solid fa-user-friends"></i>
+            <span>Friends</span>
+        </div>
+        <div class="footer-item" onclick="goToSkins()">
+            <i class="fa-solid fa-palette"></i>
+            <span>Skins</span>
+        </div>
+    </div>
+
+    <script>
+        function goToMenu() {
+            window.location.href = "menu.html";
+        }
+
+        function goToShop() {
+            window.location.href = "shop.html";
+        }
+
+        function goToFriends() {
+            window.location.href = "friends.html";
+        }
+
+        function goToSkins() {
+            window.location.href = "skins.html";
+        }
+    </script>
+
+</body>
+</html>
