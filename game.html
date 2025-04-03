@@ -345,7 +345,7 @@ body.new-background {
         
 
     <script>
-     let navigationUrl = ""; // Переменная для хранения ссылки
+       let navigationUrl = ""; // Переменная для хранения ссылки
 
 function confirmNavigation(url) {
     navigationUrl = url; // Сохраняем нужный URL
@@ -379,8 +379,9 @@ function goToSkins() {
     confirmNavigation("skins.html");
 }
 
-let keysCount = parseInt(localStorage.getItem('totalKeys') || '0');
-const canvas = document.getElementById('gameCanvas');
+
+        let keysCount = parseInt(localStorage.getItem('totalKeys') || '0');
+        const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
 const gravity = 0.5;
@@ -454,9 +455,9 @@ document.getElementById('menuButton').addEventListener('click', () => {
 });
 
 if (performance.navigation.type === 1) {
-    // Если страница была перезагружена, перенаправляем на index.html
-    window.location.href = 'index.html';
-}
+        // Если страница была перезагружена, перенаправляем на index.html
+        window.location.href = 'index.html';
+    }
 
 function updateScore() {
     document.getElementById('scoreboard').textContent = `Собрано кристаллов: ${crystalScore}`;
@@ -552,7 +553,6 @@ document.getElementById('restartButton').addEventListener('click', () => {
     gameOverModal.style.display = 'none'; // Скрываем модальное окно
     updateScore(); // Обновляем счет
 });
-
 
 window.addEventListener('load', () => {
      const selectedSkin = localStorage.getItem('selectedSkin');
@@ -714,7 +714,8 @@ window.addEventListener('load', () => {
          player.color = '#00f';  // Синий цвет по умолчанию
      }
  });
-// Начальное значение стоимости продолжения
+
+  // Начальное значение стоимости продолжения
 let continueCost = 2;
 
 document.getElementById('continueButton').addEventListener('click', () => {
